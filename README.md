@@ -1,1 +1,1 @@
-<img src="./koi.gif" alt="My GitHub Activity Koi" width="400">
+<img src="koi/koi.gif" width="256" alt="My koi" />
