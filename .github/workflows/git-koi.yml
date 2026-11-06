@@ -1,0 +1,20 @@
+name: git-profile-koi
+
+on:
+  schedule:
+    - cron: "0 0 * * *" # Updates automatically once a day at midnight
+  workflow_dispatch: # Allows you to trigger the generation manually from the Actions tab
+
+jobs:
+  generate-koi:
+    permissions:
+      contents: write # Grants the action permission to commit the GIF to your repository
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Generate git-profile-koi
+        uses: yalongwastaken/git-koi@v1.0.2
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
